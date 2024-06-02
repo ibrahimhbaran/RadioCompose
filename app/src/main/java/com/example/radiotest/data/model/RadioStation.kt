@@ -2,7 +2,7 @@ package com.example.radiotest.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Radio(
+data class RadioStation(
     @SerializedName("changeuuid") val changeuuid: String? = null,
     @SerializedName("stationuuid") val stationuuid: String? = null,
     @SerializedName("serveruuid") val serveruuid: String? = null,
