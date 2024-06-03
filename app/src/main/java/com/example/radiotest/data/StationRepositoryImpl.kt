@@ -15,13 +15,11 @@ class StationRepositoryImpl @Inject constructor(
         return radioService
             .getAllRadioStations()
             .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
     }
 
-    override fun getStationAvailability(stationuuid: String): Single<List<Available>> {
+    override fun getStationAvailability(stationuuid: String?): Single<List<Available>> {
         return radioService
             .getCurrentStationAvailability(stationuuid)
             .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
     }
 }

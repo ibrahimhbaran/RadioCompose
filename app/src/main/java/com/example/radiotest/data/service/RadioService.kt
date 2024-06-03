@@ -12,5 +12,5 @@ interface RadioService {
     fun getAllRadioStations(): Single<List<RadioStation>>
 
     @GET("/checks/{stationuuid}")
-    fun getCurrentStationAvailability(@Path("stationuuid") uuid: String): Single<List<Available>>
+    fun getCurrentStationAvailability(@Path("stationuuid") uuid: String?): Single<List<Available>>
 }

@@ -8,6 +8,6 @@ interface StationRepository {
 
     fun getAllStations(): Single<List<RadioStation>>
 
-    fun getStationAvailability(stationuuid: String): Single<List<Available>>
+    fun getStationAvailability(stationuuid: String?): Single<List<Available>>
 
 }
