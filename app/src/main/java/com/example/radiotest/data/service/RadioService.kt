@@ -8,9 +8,9 @@ import retrofit2.http.Path
 
 interface RadioService {
 
-    @GET("/stations/bylanguage/english")
+    @GET("stations/bylanguage/english")
     fun getAllRadioStations(): Single<List<RadioStation>>
 
-    @GET("/checks/{stationuuid}")
+    @GET("checks/{stationuuid}")
     fun getCurrentStationAvailability(@Path("stationuuid") uuid: String?): Single<List<Available>>
 }
