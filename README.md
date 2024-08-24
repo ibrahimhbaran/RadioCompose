@@ -2,3 +2,4 @@
 - Uses Kotlin Flow API , Retrofit , Hilt
 - MVVM Design Pattern for App Architecture used
 - UI built in Jetpack Compose
+- Unit tests cover Model , Domain and ViewModel
