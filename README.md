@@ -1,3 +1,4 @@
 - An Android App Demonstration that list Radios from Radio Browser API
 - Uses Kotlin Flow API , Retrofit , Hilt
-- MVVM Design Pattern for App Architecture used 
+- MVVM Design Pattern for App Architecture used
+- UI built in Jetpack Compose
