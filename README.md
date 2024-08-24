@@ -1,3 +1,3 @@
-- An Android Demonstration that list Radios from Radio Browser API
+- An Android App Demonstration that list Radios from Radio Browser API
 - Uses Kotlin Flow API , Retrofit , Hilt
-- MVVM Design Pattern
+- MVVM Design Pattern for App Architecture used 
