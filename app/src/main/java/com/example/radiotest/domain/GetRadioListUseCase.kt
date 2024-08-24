@@ -2,22 +2,28 @@ package com.example.radiotest.domain
 
 
 import com.example.radiotest.data.StationRepository
-import com.example.radiotest.data.model.Available
-import io.reactivex.rxjava3.core.Single
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class GetRadioStationListUseCase @Inject constructor(private val stationRepository: StationRepository) {
 
-     operator fun invoke(): Single<List<Station>> = stationRepository
+    operator fun invoke(): Flow<List<UiStation>> = stationRepository
         .getAllStations()
-        .toObservable()
-        .flatMapIterable { it }
-//        .flatMap { radio ->
-//            stationRepository
-//                .getStationAvailability(radio.stationuuid)
-//                .map { av -> Station(radio, av[0]) }
-//                .toObservable()
-//        }.toList()
-         .map { Station(radioStation = it, Available(ok = 1)) }.toList()
+        .map { rs ->
+            rs.map {
+                UiStation(
+                    stationName = it.name ?: "",
+                    url = it.url ?: "",
+                    country = it.country ?: "",
+                    favIcon = it.favicon ?: "",
+                    language = it.language ?: ""
+                )
+            }
+        }
+        .flowOn(Dispatchers.IO)
+
 
 }
